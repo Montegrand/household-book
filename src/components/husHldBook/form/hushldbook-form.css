@@ -1,0 +1,146 @@
+/* hushldbook-form.css */
+.hushldbook-form {
+  width: 100%;
+  padding: 16px 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  background-color: #fafafa;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  font-family: "Pretendard", sans-serif;
+  box-sizing: border-box;
+}
+
+/* 제목 */
+.hushldbook-form__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-align: left;
+  color: #333;
+}
+
+/* 폼 내부 구성 */
+.hushldbook-form__wrap {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hushldbook-form__row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+.hushldbook-form__label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.hushldbook-form__input,
+.hushldbook-form__select,
+.hushldbook-form__textarea {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  font-size: 0.9rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.hushldbook-form__input:focus,
+.hushldbook-form__select:focus,
+.hushldbook-form__textarea:focus {
+  border-color: #5b8def;
+  box-shadow: 0 0 0 2px rgba(91,141,239,0.2);
+  outline: none;
+}
+
+/* 선택 박스 */
+.hushldbook-form__select {
+  appearance: none;
+  cursor: pointer;
+}
+
+/* 메모 영역 */
+.hushldbook-form__row--memo .hushldbook-form__textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+
+/* 체크박스 */
+.hushldbook-form__label--checkbox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.hushldbook-form__checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #5b8def;
+}
+
+/* 라디오 버튼 그룹 */
+.hushldbook-form__row--radio {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hushldbook-form__radios {
+  display: flex;
+  gap: 12px;
+}
+
+.hushldbook-form__radio {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.hushldbook-form__radio-input {
+  width: 16px;
+  height: 16px;
+  accent-color: #5b8def;
+}
+
+/* 버튼 */
+.hushldbook-form__actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.hushldbook-form__submit {
+  background-color: #5b8def;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.hushldbook-form__submit:hover {
+  background-color: #4a7ad9;
+}
+
+.hushldbook-form__submit:active {
+  transform: scale(0.97);
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .hushldbook-form {
+    padding: 14px 16px;
+  }
+}

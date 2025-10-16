@@ -1,0 +1,150 @@
+/* hushldbook-list.css */
+.hushldbook-list {
+  flex:1 1 auto;
+  width: 100%;
+  padding: 16px 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  background-color: #fafafa;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  font-family: "Pretendard", sans-serif;
+  box-sizing: border-box;
+}
+
+/* 제목 */
+.hushldbook-list__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #333;
+  text-align: left;
+}
+
+/* 테이블 전체 영역 */
+.hushldbook-list__table-wrap {
+  overflow-x: auto;
+}
+
+.hushldbook-list__table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 0.9rem;
+}
+
+/* 헤더 */
+.hushldbook-list__head {
+  background-color: #eaf0fa;
+}
+
+.hushldbook-list__head-row {
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.hushldbook-list__th {
+  text-align: left;
+  padding: 10px 12px;
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap;
+}
+
+/* 정렬 버튼 */
+.hushldbook-list__sort-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.hushldbook-list__sort-btn:hover {
+  color: #5b8def;
+}
+
+.hushldbook-list__sort-btn::after {
+  content: "↕";
+  font-size: 0.8rem;
+  opacity: 0.4;
+}
+
+.hushldbook-list__sort-btn.is-active {
+  color: #5b8def;
+}
+
+.hushldbook-list__sort-btn.is-active[data-order="asc"]::after {
+  content: "↑";
+  opacity: 1;
+}
+
+.hushldbook-list__sort-btn.is-active[data-order="desc"]::after {
+  content: "↓";
+  opacity: 1;
+}
+
+/* 테이블 본문 */
+.hushldbook-list__body .hushldbook-list__row:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.hushldbook-list__row td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e6e6e6;
+  color: #333;
+  vertical-align: middle;
+  line-height: 1.4;
+}
+
+/* 각 컬럼별 스타일 */
+.hushldbook-list__th--price,
+.hushldbook-list__td--price {
+  text-align: right;
+}
+
+.hushldbook-list__th--date,
+.hushldbook-list__td--date {
+  white-space: nowrap;
+}
+
+.hushldbook-list__th--memo,
+.hushldbook-list__td--memo {
+  color: #555;
+}
+
+.hushldbook-list__td--memo {
+  font-style: italic;
+}
+
+/* 비어 있을 때 */
+.hushldbook-list__empty {
+  text-align: center;
+  padding: 24px 0;
+  color: #777;
+  font-size: 0.9rem;
+  background-color: #fff;
+}
+
+/* 반응형 처리 */
+@media (max-width: 768px) {
+  .hushldbook-list {
+    padding: 14px 16px;
+  }
+
+  .hushldbook-list__th,
+  .hushldbook-list__row td {
+    font-size: 0.85rem;
+    padding: 8px 10px;
+  }
+
+  .hushldbook-list__title {
+    font-size: 1rem;
+  }
+}

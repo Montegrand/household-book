@@ -1,38 +1,69 @@
+/* App.css */
+
+/* 전체 페이지 기본 구조 */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   min-height: 100vh;
+  background-color: #f5f7fa;
+  padding: 48px 16px;
+  box-sizing: border-box;
+  font-family: "Pretendard", "Noto Sans KR", sans-serif;
+}
+
+/* 가계부 전체 레이아웃 */
+.hushldbook-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 32px;
+  width: 100%;
+  max-width: 1000px;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 36px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+/* 각 영역 */
+.hushldbook-layout__form,
+.hushldbook-layout__list {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* 제목 (섹션 제목) */
+.hushldbook-layout__title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* 반응형 처리 */
+@media (max-width: 960px) {
+  .hushldbook-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px 20px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 600px) {
+  .App {
+    padding: 24px 12px;
+  }
+
+  .hushldbook-layout {
+    border-radius: 12px;
+    padding: 20px 16px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .hushldbook-layout__title {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
   }
 }

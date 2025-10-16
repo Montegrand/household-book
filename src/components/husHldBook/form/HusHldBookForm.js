@@ -1,6 +1,7 @@
 import { useRef } from "react";
+import './hushldbook-form.css';
 
-export default function HusHldBookForm(){
+export default function HusHldBookForm({onAddData}){
   const formRef = useRef(null);
 
   const submitHandler = (e)=>{
@@ -8,11 +9,8 @@ export default function HusHldBookForm(){
 
     const submitData = new FormData(formRef.current);
     const data = Object.fromEntries(submitData.entries());
-    const existing = JSON.parse(localStorage.getItem('household-book')) || [];
 
-    existing.push(data);
-
-    localStorage.setItem('household-book', JSON.stringify(existing));
+    onAddData(data);
     formRef.current.reset();
   };
 
